@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchProgramacion() {
       try {
-        const response = await fetch('/api/sheets'); // O la ruta de tu API
+        const response = await fetch('/api/sheets'); 
         if (!response.ok) {
           throw new Error(`Error al cargar los datos: ${response.statusText}`);
         }
@@ -31,7 +31,7 @@ export default function Home() {
       }
     }
     fetchProgramacion();
-  }, []); // El array vacío asegura que se ejecute solo una vez al montar
+  }, []);
 
   if (loading) {
     return (
