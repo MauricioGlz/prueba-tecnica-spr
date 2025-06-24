@@ -13,7 +13,11 @@ export default function DisclosureItem({ dayData, dayIndex }) {
   const evenPanelBg = 'bg-[#F8E3D4]'; 
   const oddPanelBg = 'bg-[#098879]';
 
-   const panelBgClass = isDayIndexEven ? evenPanelBg : oddPanelBg;
+  const evenTextColor = 'text-black'
+  const oddTextColor = 'text-white';
+ 
+  const panelBgClass = isDayIndexEven ? evenPanelBg : oddPanelBg;
+  const textColorClass = isDayIndexEven ? evenTextColor : oddTextColor;
 
   return (
     <Disclosure>
@@ -53,20 +57,20 @@ export default function DisclosureItem({ dayData, dayIndex }) {
                     <div className="md:pl-20">
                       <h1 className="text-[#d89558] font-bold text-4xl">{evento.Titulo}</h1> 
                       <div className="flex flex-row border-b border-[#d89658] py-2 text-lg font-bold text-[#353036]"> 
-                        <div className="border-r border-[#d89658] pr-2">{evento.Tipo}</div> 
+                        <div className= {`border-r border-[#d89658] pr-2  ${textColorClass}`}>{evento.Tipo}</div> 
                       </div>
                     </div>
 
-                    <div className="md:pl-20 text-lg font-black text-[#d89658]">
-                      <div><span className="font-bold">Dirección:</span> {evento.Direccion}</div>
-                      <div><span className="font-bold">Año:</span> {evento.Año}</div>
-                      <div><span className="font-bold">Idioma:</span> {evento.Idioma}</div>
-                      <div><span className="font-bold">País:</span> {evento.Pais}</div>
-                      <div><span className="font-bold">Duración:</span> {evento.Duracion}</div>
+                    <div className="md:pl-20 text-lg font-semibold text-[#d89658]">
+                      <div>Dirección: <span className={`${textColorClass}`} >{evento.Direccion}</span></div>
+                      <div>Año: <span className={`${textColorClass}`} >{evento.Año}</span></div>
+                      <div>Idioma: <span className={`${textColorClass}`} >{evento.Idioma}</span></div>
+                      <div>País: <span className={`${textColorClass}`} >{evento.Pais}</span></div>
+                      <div>Duración: <span className={`${textColorClass}`} >{evento.Duracion}</span></div>
                     </div>
 
                     <div className="md:pl-20">
-                      <p><b className="text-[#d89658]">Sinopsis:</b> {evento.Sinopsis}</p>
+                      <p><b className='text-[#d89658]'>Sinopsis:</b><span className={`${textColorClass}`}> {evento.Sinopsis} </span> </p>
                     </div>
 
                   </div>
